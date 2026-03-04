@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaithConnect - Where Faith Meets Love</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 80px 20px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: #8b4513;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #654321;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #d4571c;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: #b8471a;
+            transform: translateY(-2px);
+        }
+        
+        .how-it-works {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #d4571c;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #8b4513;
+        }
+        
+        .step p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .features {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 40px 20px;
+            background: #ffecd2;
+            border-radius: 15px;
+            border: 2px solid #fcb69f;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #8b4513;
+        }
+        
+        .feature p {
+            color: #654321;
+            line-height: 1.6;
+        }
+        
+        .testimonials {
+            padding: 80px 20px;
+            background: #f8f9fa;
+            text-align: center;
+        }
+        
+        .testimonial {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        .author {
+            font-weight: bold;
+            color: #8b4513;
+        }
+        
+        .waitlist {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #d4571c 0%, #8b4513 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .waitlist h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .waitlist-form {
+            max-width: 500px;
+            margin: 40px auto 0;
+        }
+        
+        .email-input {
+            width: 70%;
+            padding: 15px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            outline: none;
+        }
+        
+        .submit-btn {
+            width: 30%;
+            padding: 15px;
+            background: #fcb69f;
+            border: none;
+            color: #8b4513;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .email-input, .submit-btn {
+                width: 100%;
+                border-radius: 25px;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <h1>FaithConnect</h1>
+            <p>Where faith meets love. Meaningful connections for Christian singles.</p>
+            <a href="#waitlist" class="cta-button">Join the Community</a>
+        </div>
+    </section>
+    
+    <section class="how-it-works">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #8b4513;">How It Works</h2>
+            <p style="text-align: center; color: #666; font-size: 1.2rem;">Quality over quantity. Intentional connections.</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Create Your Profile</h3>
+                    <p>Share your faith journey, values, and what you're looking for in a partner.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Daily Matches</h3>
+                    <p>Receive one carefully curated match each day based on compatibility and shared values.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Start Conversations</h3>
+                    <p>Connect through meaningful conversations built on shared faith and common interests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #8b4513;">Why FaithConnect?</h2>
+            <p style="text-align: center; color: #666; font-size: 1.2rem;">Built by Christians, for Christians</p>
+            
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">✝️</div>
+                    <h3>Faith-Centered</h3>
+                    <p>Every match is based on shared Christian values and beliefs that matter to you.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">💝</div>
+                    <h3>Quality Matches</h3>
+                    <p>One thoughtful match per day. No endless swiping. Focus on what matters.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Safe & Respectful</h3>
+                    <p>A community built on Christian principles of love, respect, and integrity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 50px; color: #8b4513;">Success Stories</h2>
+            
+            <div class="testimonial">
+                <div class="quote">"Finally, a dating app where I could be authentic about my faith. Met my husband here after just 3 months!"</div>
+                <div class="author">- Sarah M., married 2023</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="waitlist" id="waitlist">
+        <div class="container">
+            <h2>Coming Soon</h2>
+            <p>Be among the first Christian singles to find meaningful connections. Early members get premium features free for 6 months.</p>
+            
+            <form class="waitlist-form" action="#" method="post">
+                <input type="email" class="email-input" placeholder="Enter your email" required>
+                <button type="submit" class="submit-btn">Join Waitlist</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ed's Business Ideas - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+        
+        .project-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .project-card h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .project-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .project-tag {
+            background: #f0f0f0;
+            color: #666;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        
+        .tax-app .project-tag {
+            background: #667eea;
+            color: white;
+        }
+        
+        .dating .project-tag {
+            background: #d4571c;
+            color: white;
+        }
+        
+        .education .project-tag {
+            background: #ff6b9d;
+            color: white;
+        }
+        
+        .footer {
+            margin-top: 60px;
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ed's Business Ideas</h1>
+        <p class="subtitle">Exploring entrepreneurial opportunities in tech</p>
+        
+        <div class="projects-grid">
+            <a href="tax-app/" class="project-card tax-app">
+                <div class="project-icon">📊</div>
+                <h2>TaxFlow</h2>
+                <p>Simple tax filing made easy. File your taxes in minutes, not hours with our streamlined web application.</p>
+                <div class="project-tag">FinTech</div>
+            </a>
+            
+            <a href="christian-dating/" class="project-card dating">
+                <div class="project-icon">💕</div>
+                <h2>FaithConnect</h2>
+                <p>Christian dating platform where faith meets love. Quality matches based on shared values and beliefs.</p>
+                <div class="project-tag">Social</div>
+            </a>
+            
+            <a href="kids-education/" class="project-card education">
+                <div class="project-icon">🎓</div>
+                <h2>LearnPlay</h2>
+                <p>Interactive educational platform for kids. Gamified learning that makes education fun and engaging.</p>
+                <div class="project-tag">EdTech</div>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>These are concepts in development. Click any card to see the full landing page.</p>
+        </div>
+    </div>
+</body>
+</html>
