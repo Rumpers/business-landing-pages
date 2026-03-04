@@ -12,298 +12,624 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #2c3e50;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #c0392b;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #c0392b;
         }
         
         .hero {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            padding: 80px 20px;
+            background: linear-gradient(135deg, #f8c291 0%, #f8a5c2 100%);
+            padding: 120px 20px 100px;
             text-align: center;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="20" r="2" fill="rgba(255,255,255,0.3)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.2)"/><circle cx="60" cy="80" r="1" fill="rgba(255,255,255,0.25)"/><circle cx="30" cy="60" r="2.5" fill="rgba(255,255,255,0.15)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(180deg); }
+            100% { transform: translateY(0px) rotate(360deg); }
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
             font-weight: 700;
-            color: #8b4513;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            line-height: 1.1;
         }
         
-        .hero p {
-            font-size: 1.3rem;
+        .hero .subtitle {
+            font-size: 1.4rem;
             margin-bottom: 2rem;
-            color: #654321;
+            color: rgba(255,255,255,0.95);
+            font-weight: 300;
+        }
+        
+        .hero .description {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.6;
         }
         
         .cta-button {
             display: inline-block;
-            background: #d4571c;
+            background: #c0392b;
             color: white;
-            padding: 15px 40px;
-            font-size: 1.2rem;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
             border: none;
-            border-radius: 50px;
+            border-radius: 30px;
             text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 8px 25px rgba(192, 57, 43, 0.3);
         }
         
         .cta-button:hover {
-            background: #b8471a;
-            transform: translateY(-2px);
+            background: #a93226;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(192, 57, 43, 0.4);
+        }
+        
+        .stats-section {
+            padding: 80px 20px;
+            background: white;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .stat-item {
+            padding: 30px 20px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #c0392b;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .stat-text {
+            color: #7f8c8d;
+            font-size: 1.1rem;
         }
         
         .how-it-works {
-            padding: 80px 20px;
+            padding: 100px 20px;
             background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
         }
         
         .steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
             margin-top: 50px;
         }
         
         .step {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .step:hover {
+            transform: translateY(-10px);
         }
         
         .step-number {
-            width: 60px;
-            height: 60px;
-            background: #d4571c;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
-            margin: 0 auto 20px;
+            margin: 0 auto 30px;
+            box-shadow: 0 8px 25px rgba(192, 57, 43, 0.3);
         }
         
         .step h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #8b4513;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 600;
         }
         
         .step p {
-            color: #666;
+            color: #7f8c8d;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        
+        .testimonials {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f8c291 0%, #f8a5c2 100%);
+            text-align: center;
+        }
+        
+        .testimonials h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .testimonials-subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: #f8c291;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: Georgia, serif;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #2c3e50;
             line-height: 1.6;
         }
         
+        .author {
+            font-weight: 600;
+            color: #c0392b;
+            font-size: 0.95rem;
+        }
+        
+        .hearts {
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+        
         .features {
-            padding: 80px 20px;
+            padding: 100px 20px;
             background: white;
         }
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
             margin-top: 50px;
         }
         
         .feature {
             text-align: center;
-            padding: 40px 20px;
-            background: #ffecd2;
-            border-radius: 15px;
-            border: 2px solid #fcb69f;
+            padding: 50px 30px;
+            background: #fdf2f2;
+            border-radius: 20px;
+            border: 2px solid #f8c291;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
         }
         
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 4rem;
+            margin-bottom: 30px;
+            display: block;
         }
         
         .feature h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #8b4513;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 600;
         }
         
         .feature p {
-            color: #654321;
-            line-height: 1.6;
-        }
-        
-        .testimonials {
-            padding: 80px 20px;
-            background: #f8f9fa;
-            text-align: center;
-        }
-        
-        .testimonial {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        
-        .quote {
-            font-style: italic;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #666;
-        }
-        
-        .author {
-            font-weight: bold;
-            color: #8b4513;
+            color: #7f8c8d;
+            line-height: 1.7;
+            font-size: 1.05rem;
         }
         
         .waitlist {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #d4571c 0%, #8b4513 100%);
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
             text-align: center;
         }
         
         .waitlist h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .waitlist-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
         }
         
         .waitlist-form {
             max-width: 500px;
-            margin: 40px auto 0;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 50px;
+            overflow: hidden;
         }
         
         .email-input {
-            width: 70%;
-            padding: 15px;
+            flex: 1;
+            padding: 20px 25px;
             font-size: 1.1rem;
             border: none;
-            border-radius: 50px 0 0 50px;
             outline: none;
+            background: white;
         }
         
         .submit-btn {
-            width: 30%;
-            padding: 15px;
-            background: #fcb69f;
+            padding: 20px 35px;
+            background: #c0392b;
             border: none;
-            color: #8b4513;
+            color: white;
             font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 0 50px 50px 0;
+            font-weight: 600;
             cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: #a93226;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
         }
         
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
+            .nav-links {
+                display: none;
             }
             
-            .email-input, .submit-btn {
-                width: 100%;
-                border-radius: 25px;
-                margin: 5px 0;
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .waitlist-form {
+                flex-direction: column;
+                border-radius: 15px;
+                gap: 0;
+            }
+            
+            .email-input {
+                border-radius: 15px 15px 0 0;
+            }
+            
+            .submit-btn {
+                border-radius: 0 0 15px 15px;
+            }
+            
+            .steps, .features-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
             }
         }
     </style>
 </head>
 <body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">FaithConnect</a>
+            <ul class="nav-links">
+                <li><a href="#how">How It Works</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#stories">Stories</a></li>
+                <li><a href="#join">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <section class="hero">
         <div class="container">
-            <h1>FaithConnect</h1>
-            <p>Where faith meets love. Meaningful connections for Christian singles.</p>
-            <a href="#waitlist" class="cta-button">Join the Community</a>
+            <div class="hero-content">
+                <h1>Where Faith Meets Love</h1>
+                <p class="subtitle">Meaningful connections for Christian singles</p>
+                <p class="description">Join a community where shared faith leads to lasting relationships. Quality matches, genuine connections, God-centered love.</p>
+                <a href="#join" class="cta-button">Find Your Match</a>
+            </div>
         </div>
     </section>
     
-    <section class="how-it-works">
+    <section class="stats-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #8b4513;">How It Works</h2>
-            <p style="text-align: center; color: #666; font-size: 1.2rem;">Quality over quantity. Intentional connections.</p>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">2,847</span>
+                    <div class="stat-text">Couples matched this year</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">94%</span>
+                    <div class="stat-text">Find their match within 3 months</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <div class="stat-text">Quality match per day</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <div class="stat-text">Prayer support community</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how">
+        <div class="container">
+            <h2 class="section-title">How FaithConnect Works</h2>
+            <p class="section-subtitle">Quality over quantity. Intentional dating that honors God.</p>
             
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Create Your Profile</h3>
-                    <p>Share your faith journey, values, and what you're looking for in a partner.</p>
+                    <h3>Share Your Faith Journey</h3>
+                    <p>Tell us about your relationship with God, your values, and what you're looking for in a partner. Our detailed compatibility assessment ensures meaningful matches.</p>
                 </div>
                 
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Daily Matches</h3>
-                    <p>Receive one carefully curated match each day based on compatibility and shared values.</p>
+                    <h3>Receive Your Daily Match</h3>
+                    <p>Every day at noon, receive one carefully curated match based on faith compatibility, shared values, and relationship goals. No endless swiping, just quality connections.</p>
                 </div>
                 
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Start Conversations</h3>
-                    <p>Connect through meaningful conversations built on shared faith and common interests.</p>
+                    <h3>Connect & Grow Together</h3>
+                    <p>Start conversations with guided icebreakers about faith, life, and love. Build relationships on a foundation that honors God and leads to lasting commitment.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="features">
+    <section class="testimonials" id="stories">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #8b4513;">Why FaithConnect?</h2>
-            <p style="text-align: center; color: #666; font-size: 1.2rem;">Built by Christians, for Christians</p>
+            <h2>Love Stories</h2>
+            <p class="testimonials-subtitle">Real couples who found love through faith</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="quote">He was worried about boring me with theology discussions – but then I showed him my seminary notes, and we knew we were meant to study God's word together. Two years later, we're engaged and leading a couples' Bible study.</div>
+                    <div class="hearts">💕</div>
+                    <div class="author">Sarah & Michael</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="quote">On our first coffee date, we prayed together before ordering. That simple moment showed me this app was different – it connected hearts that were already connected to Christ.</div>
+                    <div class="hearts">💕</div>
+                    <div class="author">Rachel & David</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="quote">FaithConnect helped us find each other when we were both seeking God's will for our lives. Our shared faith became the foundation for everything beautiful that followed.</div>
+                    <div class="hearts">💕</div>
+                    <div class="author">Grace & Timothy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Why FaithConnect?</h2>
+            <p class="section-subtitle">Built by Christians, for Christians seeking God's best</p>
             
             <div class="features-grid">
                 <div class="feature">
                     <div class="feature-icon">✝️</div>
-                    <h3>Faith-Centered</h3>
-                    <p>Every match is based on shared Christian values and beliefs that matter to you.</p>
+                    <h3>Faith-Centered Matching</h3>
+                    <p>Every match is based on deep faith compatibility – denominational preferences, spiritual gifts, ministry calling, and biblical worldview alignment.</p>
                 </div>
                 
                 <div class="feature">
                     <div class="feature-icon">💝</div>
-                    <h3>Quality Matches</h3>
-                    <p>One thoughtful match per day. No endless swiping. Focus on what matters.</p>
+                    <h3>Quality Over Quantity</h3>
+                    <p>One thoughtful match per day means no overwhelming choices or endless swiping. Focus on building one meaningful connection at a time.</p>
                 </div>
                 
                 <div class="feature">
                     <div class="feature-icon">🛡️</div>
-                    <h3>Safe & Respectful</h3>
-                    <p>A community built on Christian principles of love, respect, and integrity.</p>
+                    <h3>Safe & Respectful Community</h3>
+                    <p>Our community guidelines reflect Christian values of love, respect, and purity. Zero tolerance for inappropriate behavior or content.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="testimonials">
+    <section class="waitlist" id="join">
         <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 50px; color: #8b4513;">Success Stories</h2>
-            
-            <div class="testimonial">
-                <div class="quote">"Finally, a dating app where I could be authentic about my faith. Met my husband here after just 3 months!"</div>
-                <div class="author">- Sarah M., married 2023</div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="waitlist" id="waitlist">
-        <div class="container">
-            <h2>Coming Soon</h2>
-            <p>Be among the first Christian singles to find meaningful connections. Early members get premium features free for 6 months.</p>
+            <h2>Ready to Find Your Match?</h2>
+            <p class="waitlist-subtitle">Join our community and let faith guide you to love</p>
             
             <form class="waitlist-form" action="#" method="post">
-                <input type="email" class="email-input" placeholder="Enter your email" required>
-                <button type="submit" class="submit-btn">Join Waitlist</button>
+                <input type="email" class="email-input" placeholder="Enter your email address" required>
+                <button type="submit" class="submit-btn">Join FaithConnect</button>
             </form>
         </div>
     </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Community Guidelines</a>
+                    <a href="#">Success Stories</a>
+                    <a href="#">Contact</a>
+                </div>
+                <p>&copy; 2026 FaithConnect. Connecting hearts that love Jesus. | Designed with ❤️ for the Christian community</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
